@@ -45,14 +45,16 @@ class App(QtWidgets.QApplication):
             self.textbrowser.append("\nErro: Você não inseriu nenhum texto;")
 
     def start(self):
-        if not "text.mp3" in os.listdir():  self.textbrowser.append("\nErro: Você não iniciou nenhuma conversão válida;")
+        if not "text.mp3" in os.listdir():  
+            self.textbrowser.append("\nErro: Você não iniciou nenhuma conversão válida;")
         else:
             try:
                 playsound(f"{os.getcwd()}\\text.mp3")
             except Exception as err:
                 self.textbrowser.append(f"Ocorreu um erro: {err}")
 
-    def clear(self):    self.textbrowser.clear()
+    def clear(self):
+        self.textbrowser.clear()
 
 if __name__ == "__main__":
     app = App()
